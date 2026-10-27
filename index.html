@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CHIAROSCURO</title>
+</head>
+<body>
+    <div class="barra-superior">
+        <div id="info-frete">
+            <span class="frete-gratis">Frete Grátis acima de R$ 90,00</span>
+        </div>
+
+        <div id="info-mais">
+            <nav>
+                <ul>
+                    <li><a href="">Acompanhe seu pedido</a></li>
+                    <li><a href="">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <header class="masthead">
+
+        <h1>CHIAROSCURO</h1>
+        <div class="info-header">
+            <nav>
+                <ul>
+                    <li><a href=""></a>CD's</li>
+                    <li><a href=""></a>DVD's</li>
+                    <li><a href=""></a>Pôsteres</li>
+                    <li><a href=""></a>Vinis</li>
+                </ul>
+            </nav>
+        
+            <div class="buscar-item">
+                <i class="bi bi-search"></i>
+                <input type="search" placeholder="Buscar">
+
+                <div id="resultados-busca">
+                    <div id="grid-resultados-busca">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <a href="carrinho.html" id="carrinho"><i class="bi bi-basket"></i></a>
+
+            <button id="botao-modo-escuro" type="button"><i class="bi bi-moon-stars-fill"></i></button>
+        </div>
+
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="novidades">
+                <article class="bloco-principal">
+                    <span>Semana do Consumidor</span>
+                    <h2>Veja nossa nova coleção de saltos inspirados na Lady Gaga</h2>
+                    <p>Inspirada na diva do POP, nossa nova coleção de saltos traz um ar especial para o seu verão.</p>
+                    <div class="botao-vermais">
+                        <button id="vermais">Ver Coleção</button>
+                    </div>
+                </article>
+
+                <aside id="foto-ladygaga">
+                    <img src="img/semana_do_consumidor.jpg" alt="amigos na sala de cinema">
+                </aside>
+            </div>
+        
+        </section>
+
+        <section id="colecao-itens">
+            <div class="topo-colecao-itens">
+                <div class="filtrar-itens">
+                    <button type="button">Saltos</button>
+                    <button type="button">Posteres</button>
+                    <button type="button">DVD's</button>
+                    <button type="button">Action Figures</button>
+                    <button type="button" id="filtrar-todos">Todas</button>
+                </div>
+
+                <div class="ordenar-itens">
+                    <span class="total-itens"></span>
+
+                    <div class="ordenar-itens">
+                        <i class="bi bi-search"></i>
+                        <select id="tipo-ordenacao" name="tipo-ordenacao" required>
+                            <option value="ordenar">Ordenar: </option>
+                            <option value="menor">menor -> maior</option>
+                            <option value="maior">maior -> menor</option>
+                            <option value="alfabetico">A a Z</option>
+                            <option value="ocitebafla">Z a A</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="grid-colecao-itens">
+
+            </div>
+        </section>
+
+        <section class="bloco-final">
+            <div id="newsletter">
+                <h2>Venha para nossa Passarela!</h2>
+                <p>Assine, fique por dentro das novidades e ganhe 13% de desconto na sua primeira compra.</p>
+                <form id="form-newsletter">
+                    <input type="email" id="email" placeholder="digite seu email" required>
+                    <button type="submit">Desfilar</button>
+                </form>
+                <div id="mensagem-newsletter"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-institucional">
+            <h1>CHIAROSCURO</h1>
+            <nav class="info-institucional">
+                <ul>
+                    <li><a href="">Trocas</a></li>
+                    <li><a href="mailto:monsterus@gmail.com">Fale Conosco</a></li>
+                    <li><a href="">Privacidade</a></li>
+                    <li><a href="">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-social">
+            <h2>Acompanhe nossas novidades nas redes sociais!</h2>
+            <nav>
+                <ul>
+                    <li><a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a></i></li>
+                    <li><a href="https://x.com"><i class="bi bi-twitter-x"></i></a></i></li>
+                    <li><a href="https://www.tiktok.com"><i class="bi bi-tiktok"></i></a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 CHIAROSCURO - MATRIZ</p>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
