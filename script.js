@@ -7,7 +7,8 @@ const produtos = [
         preco: "29,90",
         categoria: "DVD's",
         imagem: "img/desobediencia.jpg",
-        alt: "pôster do filme Desobediência"
+        alt: "pôster do filme Desobediência",
+        avaliacao: ""
     },
 
     {
@@ -17,7 +18,8 @@ const produtos = [
         preco: "35,90",
         categoria: "DVD's",
         imagem: "img/carol.jpg",
-        alt: "pôster do filme Carol"
+        alt: "pôster do filme Carol",
+        avaliacao: ""
     },
 
     {
@@ -27,7 +29,8 @@ const produtos = [
         preco: "25,90",
         categoria: "DVD's",
         imagem: "img/chicago.jpg",
-        alt: "pôster do filme Chicago"
+        alt: "pôster do filme Chicago", 
+        avaliacao: ""
     },
 
     {
@@ -37,7 +40,8 @@ const produtos = [
         preco: "",
         categoria: "",
         imagem: "img/",
-        alt: ""
+        alt: "",
+        avaliacao: ""
     },
 
     {
@@ -47,7 +51,8 @@ const produtos = [
         preco: "",
         categoria: "",
         imagem: "img/",
-        alt: ""
+        alt: "",
+        avaliacao: ""
     },
 
     {
@@ -57,7 +62,8 @@ const produtos = [
         preco: "",
         categoria: "",
         imagem: "img/",
-        alt: ""
+        alt: "",
+        avaliacao: ""
     },
 
     {
@@ -67,7 +73,8 @@ const produtos = [
         preco: "",
         categoria: "",
         imagem: "img/",
-        alt: ""
+        alt: "",
+        avaliacao: ""
     },
 
     {
@@ -77,12 +84,10 @@ const produtos = [
         preco: "",
         categoria: "",
         imagem: "img/",
-        alt: ""
+        alt: "",
+        avaliacao: ""
     }
 ]
-
-
-
 
 /****MODO ESCURO****/
 

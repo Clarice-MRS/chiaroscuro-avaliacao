@@ -12,7 +12,8 @@
 :root {
     --fundoPagina: #ca2e28; /* fundo de pagina */
     --destaquePagina: #f5eee5;
-    --destaquePadrao: #020412 ; /* texto principal*/
+    --destaquePadrao: #020412; /* texto principal*/
+    --destaqueBotao: #F3F4F6; /* botao - para diferenciar no modo escuro */
     --cards-font: #F3F4F6; /* cards-font campos*/ 
     --accent: #6D28D9; /* marca, botoes de acao e destaques */
     --price: #059669; /*Precos e selos de oferta*/
@@ -31,8 +32,12 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--fundoPagina);
     font-family: var(--fontePadrao);
+}
+
+body {
+    background-color: var(--fundoPagina);
+    color: var(--destaquePadrao);
 }
 
 /********************
@@ -64,13 +69,13 @@ button:hover {
 
 .hero button{
     width: 100px;
-    color: var(--cards-font);
+    color: var(--destaqueBotao);
     background-color: var(--fundoPagina);
     border: none;
 }
 
 #newsletter button {
-    color: var(--cards-font);
+    color: var(--destaqueBotao);
     font-size: 13px;
     background-color: var(--fundoPagina);
     border: none;
@@ -482,19 +487,22 @@ button:hover {
 }
 
 .mensagem-confirmacao {
-    color: var(--cards-font);
+    color: var(--destaquePadrao);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     border-radius: 15px;
     background-color: var(--destaquePagina);
+}
+
+#newsletter .mensagem-confirmacao p {
     color: var(--destaquePadrao);
 }
 
 .mensagem-confirmacao strong {
     font-size: 20px;
-    color: var(--cards-font);
+    color: var(--destaquePadrao);
     font-family: var(--fontePadrao);
     padding: 0.5rem;
 }
@@ -505,7 +513,6 @@ button:hover {
     width: 200px;
     height: 100%;
 }
-
 
 /**************
     FOOTER
@@ -559,7 +566,7 @@ footer h2 {
 }
 
 .info-institucional a {
-    color: black;
+    color: var(--destaquePadrao);
     font-size: 18px;
 }
 
@@ -596,4 +603,16 @@ footer h2 {
 
 .footer-social i {
     color: var(--cards-font);
+}
+
+/***********************
+    MODO - ESCURO
+***********************/
+
+.modo-escuro {
+    --fundoPagina: #060606;
+    --destaquePagina: #292929;
+    --destaquePadrao: #f5eee5;
+    --destaqueBotao: #bcb6b6;
+    --cards-font: #353535;
 }
