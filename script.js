@@ -3,93 +3,95 @@ const produtos = [
     {
         id: "1",
         nome: "Desobediência",
-        descricao: "Ronit precisa voltar para sua cidade natal após a morte de seu pai, um rabino. Uma vez de volta, ela recorda a paixão proibida pela melhor amiga de infância.",
+        descricao: "2017 • Romance • 1h54min",
         preco: "29,90",
-        categoria: "DVD's",
+        categoria: "DVD",
         imagem: "img/desobediencia.jpg",
         alt: "pôster do filme Desobediência",
-        avaliacao: ""
+        avaliacao: "4"
     },
 
     {
         id: "2",
         nome: "Carol",
-        descricao: "",
+        descricao: "2015 • Romance 1h58min",
         preco: "35,90",
-        categoria: "DVD's",
+        categoria: "DVD",
         imagem: "img/carol.jpg",
         alt: "pôster do filme Carol",
-        avaliacao: ""
+        avaliacao: "4"
     },
 
     {
         id: "3",
         nome: "Chicago",
-        descricao: "",
+        descricao: "2002 • Musical • 1h53min",
         preco: "25,90",
-        categoria: "DVD's",
+        categoria: "DVD",
         imagem: "img/chicago.jpg",
         alt: "pôster do filme Chicago", 
-        avaliacao: ""
+        avaliacao: "4"
     },
 
     {
         id: "4",
-        nome: "",
-        descricao: "",
-        preco: "",
-        categoria: "",
-        imagem: "img/",
-        alt: "",
-        avaliacao: ""
+        nome: "Agatha All Along - Rio Vidal",
+        descricao: "20×30 cm • Papel fotográfico",
+        preco: "15,90",
+        categoria: "Posteres",
+        imagem: "img/agathaallalong1.jpg",
+        alt: "pôster de agatha all along - Rio",
+        avaliacao: "5"
     },
 
     {
         id: "5",
-        nome: "",
-        descricao: "",
-        preco: "",
-        categoria: "",
-        imagem: "img/",
-        alt: "",
-        avaliacao: ""
+        nome: "Agatha All Along - Agatha Harkness",
+        descricao: "20×30 cm • Papel fotográfico",
+        preco: "15,90",
+        categoria: "Posteres",
+        imagem: "img/agathaallalong2.jpg",
+        alt: "pôster de agatha all along - Agatha",
+        avaliacao: "5"
     },
 
     {
-        id: "",
-        nome: "",
-        descricao: "",
-        preco: "",
-        categoria: "",
-        imagem: "img/",
-        alt: "",
-        avaliacao: ""
+        id: "6",
+        nome: "Mayhem - Lady Gaga",
+        descricao: "2024 • Pop • 33 RPM",
+        preco: "399,00",
+        categoria: "Vinis",
+        imagem: "img/mayhemladygaga1.jpg",
+        alt: "vinil mayhem - Lady Gaga",
+        avaliacao: "4"
     },
 
     {
-        id: "",
-        nome: "",
-        descricao: "",
-        preco: "",
-        categoria: "",
-        imagem: "img/",
-        alt: "",
-        avaliacao: ""
+        id: "7",
+        nome: "Mutter - Rammstein",
+        descricao: "2001 • Metal • 45 RPM",
+        preco: "365,45",
+        categoria: "Vinis",
+        imagem: "img/rammsteinmutter.jpg",
+        alt: "vinil mutter - Rammstein",
+        avaliacao: "4"
     },
 
     {
-        id: "",
-        nome: "",
-        descricao: "",
-        preco: "",
-        categoria: "",
-        imagem: "img/",
-        alt: "",
-        avaliacao: ""
+        id: "8",
+        nome: "Lady Gaga - Gagacabana",
+        descricao: "20×30 cm • Papel fotográfico",
+        preco: "17,90",
+        categoria: "Posteres",
+        imagem: "img/gagacabana.jpg",
+        alt: "pôster do show da Lady Gaga em Copacabana",
+        avaliacao: "5"
     }
 ]
 
-/****MODO ESCURO****/
+/****************************
+    MODO ESCURO
+****************************/
 
     const trocaTema = document.getElementById("botao-modo-escuro");
 
@@ -143,3 +145,35 @@ if (formulario && mensagem) {
         formulario.reset();
 });
 }
+
+/****************************
+    CRIAR PRODUTOS
+****************************/
+
+function criarProdutos(produtos) {
+
+    for(const produto of produtos) {
+
+        const cardProduto = document.getElementById("grid-colecao-itens");
+        cardProduto.innerHTML += ` 
+        <article class="produto-info">
+
+            <img class="img-produto" src="${produto.imagem}" alt="${produto.alt}">
+
+            <span class="categoria${produto.categoria.toLowerCase()}">
+                ${produto.categoria}
+            </span>
+            
+            <div class="informacoes">
+                <h2 class="nome">${produto.nome}</h2>
+                <span class="descricao">${produto.descricao} </span>
+                <span class="preco">${produto.preco} </span>
+                <span class="avaliacao">${produto.avaliacao}</span>
+            </div>
+
+        </article>
+    `;
+}    
+}
+
+criarProdutos(produtos);
