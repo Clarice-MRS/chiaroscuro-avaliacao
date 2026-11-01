@@ -353,22 +353,19 @@ button:hover {
     flex-direction: column;
     height: 400px;
     background-color: var(--destaquePagina);
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     padding-bottom: 1rem;
-    transition: transform 0.3s;
-}
-
-.produto-info:hover {
-    transform: translateY(-5px);
 }
 
 .img-produto {
     width: 100%;
     height: 220px;
     object-fit: contain;
-    background-color: var(--destaquePagina);
-    padding: 0.5rem;
+    object-position: center;
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .informacoes {
@@ -381,11 +378,21 @@ button:hover {
 .nome {
     font-size: 1rem;
     color: var(--destaquePadrao);
+    min-height: 2.4rem;
 }
 
 .descricao {
     font-size: 0.9rem;
     color: var(--destaquePadrao);
+}
+
+.preco-avaliacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.5rem;
 }
 
 .preco {
@@ -395,6 +402,19 @@ button:hover {
 
 .avaliacao {
     color: var(--star);
+}
+
+.adicionar-produto {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+.botao-adicionar {
+    background-color: var(--fundoPagina);
+    color: var(--cards-font);
+    border-radius: 10px;
+    border: none;
 }
 
 .filtrar-itens {
@@ -488,6 +508,8 @@ button:hover {
 }
 
 .categoriadvd {
+    width: 80%;
+    align-self: center;
     background-color: var(--dvds);
     border-radius: 5px;
     color: var(--paper);
@@ -496,6 +518,8 @@ button:hover {
 }
 
 .categoriaposteres {
+    width: 80%;
+    align-self: center;
     background-color: var(--posteres);
     border-radius: 5px;
     color: var(--paper);
@@ -504,6 +528,8 @@ button:hover {
 }
 
 .categoriavinis {
+    width: 80%;
+    align-self: center;
     background-color: var(--vinis);
     border-radius: 5px;
     color: var(--paper);
@@ -696,4 +722,9 @@ footer h2 {
     --destaquePadrao: #f5eee5;
     --destaqueBotao: #bcb6b6;
     --cards-font: #353535;
+}
+
+.modo-escuro .botao-adicionar {
+    background-color: #ca2e28;
+    color: #F3F4F6;
 }

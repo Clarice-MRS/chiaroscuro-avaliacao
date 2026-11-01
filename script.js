@@ -90,6 +90,51 @@ const produtos = [
 ]
 
 /****************************
+    FILTRAR PRODUTOS
+****************************/
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const botoesFiltro = document.querySelectorAll(".filtrar-produtos button:not(#filtrar-todos)");
+    const botaoTodas = document.getElementById("filtrar-todos");
+    const cardProduto = document.getElementById("grid-colecao-itens");
+
+    botoesFiltro.forEach(function(botao) {
+
+        botao.addEventListener("click", function() {
+
+            const resultado = filtrarProdutos(botao.textContent.trim());
+
+            cardProduto.innerHTML = "";
+
+            criarProdutos(resultado);
+        });
+    });
+
+    botaoTodas.addEventListener("click", function() {
+
+        cardProduto.innerHTML = "";
+
+        criarProdutos(produtos);
+    });
+
+});
+
+function filtrarProdutos(categoria) {
+
+    const produtosFiltrados = [];
+
+    for (const produto of produtos) { 
+        if (produto.categoria === categoria) {
+            produtosFiltrados.push(produto);   
+        }
+
+    }
+
+    return produtosFiltrados; 
+}
+
+/****************************
     MODO ESCURO
 ****************************/
 
@@ -167,8 +212,15 @@ function criarProdutos(produtos) {
             <div class="informacoes">
                 <h2 class="nome">${produto.nome}</h2>
                 <span class="descricao">${produto.descricao} </span>
-                <span class="preco">${produto.preco} </span>
+            </div>
+
+            <div class="preco-avaliacao">
+                <span class="preco">${produto.preco}</span>
                 <span class="avaliacao">${produto.avaliacao}</span>
+            </div>
+
+            <div class="adicionar-produto">
+                <button class="botao-adicionar" type="button">adicionar</button>
             </div>
 
         </article>
@@ -177,3 +229,4 @@ function criarProdutos(produtos) {
 }
 
 criarProdutos(produtos);
+filtrarProdutos();
