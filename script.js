@@ -38,7 +38,7 @@ const produtos = [
         nome: "Agatha All Along - Rio Vidal",
         descricao: "20×30 cm • Papel fotográfico",
         preco: "15,90",
-        categoria: "Posteres",
+        categoria: "Poster",
         imagem: "img/agathaallalong1.jpg",
         alt: "pôster de agatha all along - Rio",
         avaliacao: "5"
@@ -49,7 +49,7 @@ const produtos = [
         nome: "Agatha All Along - Agatha Harkness",
         descricao: "20×30 cm • Papel fotográfico",
         preco: "15,90",
-        categoria: "Posteres",
+        categoria: "Poster",
         imagem: "img/agathaallalong2.jpg",
         alt: "pôster de agatha all along - Agatha",
         avaliacao: "5"
@@ -60,9 +60,9 @@ const produtos = [
         nome: "Mayhem - Lady Gaga",
         descricao: "2024 • Pop • 33 RPM",
         preco: "399,00",
-        categoria: "Vinis",
+        categoria: "Vinil",
         imagem: "img/mayhemladygaga1.jpg",
-        alt: "vinil mayhem - Lady Gaga",
+        alt: "Vinil mayhem - Lady Gaga",
         avaliacao: "4"
     },
 
@@ -71,9 +71,9 @@ const produtos = [
         nome: "Mutter - Rammstein",
         descricao: "2001 • Metal • 45 RPM",
         preco: "365,45",
-        categoria: "Vinis",
+        categoria: "Vinil",
         imagem: "img/rammsteinmutter.jpg",
-        alt: "vinil mutter - Rammstein",
+        alt: "Vinil mutter - Rammstein",
         avaliacao: "4"
     },
 
@@ -82,57 +82,14 @@ const produtos = [
         nome: "Lady Gaga - Gagacabana",
         descricao: "20×30 cm • Papel fotográfico",
         preco: "17,90",
-        categoria: "Posteres",
+        categoria: "Poster",
         imagem: "img/gagacabana.jpg",
         alt: "pôster do show da Lady Gaga em Copacabana",
         avaliacao: "5"
     }
 ]
 
-/****************************
-    FILTRAR PRODUTOS
-****************************/
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    const botoesFiltro = document.querySelectorAll(".filtrar-produtos button:not(#filtrar-todos)");
-    const botaoTodas = document.getElementById("filtrar-todos");
-    const cardProduto = document.getElementById("grid-colecao-itens");
-
-    botoesFiltro.forEach(function(botao) {
-
-        botao.addEventListener("click", function() {
-
-            const resultado = filtrarProdutos(botao.textContent.trim());
-
-            cardProduto.innerHTML = "";
-
-            criarProdutos(resultado);
-        });
-    });
-
-    botaoTodas.addEventListener("click", function() {
-
-        cardProduto.innerHTML = "";
-
-        criarProdutos(produtos);
-    });
-
-});
-
-function filtrarProdutos(categoria) {
-
-    const produtosFiltrados = [];
-
-    for (const produto of produtos) { 
-        if (produto.categoria === categoria) {
-            produtosFiltrados.push(produto);   
-        }
-
-    }
-
-    return produtosFiltrados; 
-}
+let produtosExibidos = [...produtos];
 
 /****************************
     MODO ESCURO
@@ -195,38 +152,213 @@ if (formulario && mensagem) {
     CRIAR PRODUTOS
 ****************************/
 
-function criarProdutos(produtos) {
+const cardProduto = document.getElementById("grid-colecao-itens");
 
-    for(const produto of produtos) {
+function criarProdutos(produtos, destino) {
 
-        const cardProduto = document.getElementById("grid-colecao-itens");
-        cardProduto.innerHTML += ` 
-        <article class="produto-info">
+    for (const produto of produtos) {
 
-            <img class="img-produto" src="${produto.imagem}" alt="${produto.alt}">
+        destino.innerHTML += `
+            <article class="produto-info">
+                <img class="img-produto" src="${produto.imagem}" alt="${produto.alt}">
 
-            <span class="categoria${produto.categoria.toLowerCase()}">
-                ${produto.categoria}
-            </span>
-            
-            <div class="informacoes">
-                <h2 class="nome">${produto.nome}</h2>
-                <span class="descricao">${produto.descricao} </span>
-            </div>
+                <span class="categoria${produto.categoria.toLowerCase()}">
+                    ${produto.categoria}
+                </span>
 
-            <div class="preco-avaliacao">
-                <span class="preco">${produto.preco}</span>
-                <span class="avaliacao">${produto.avaliacao}</span>
-            </div>
+                <div class="informacoes">
+                    <h2 class="nome">${produto.nome}</h2>
+                    <span class="descricao">${produto.descricao}</span>
+                </div>
 
-            <div class="adicionar-produto">
-                <button class="botao-adicionar" type="button">adicionar</button>
-            </div>
+                <div class="preco-avaliacao">
+                    <span class="preco">${produto.preco}</span>
+                    <span class="avaliacao">${produto.avaliacao}</span>
+                </div>
 
-        </article>
-    `;
-}    
+                <div class="adicionar-produto">
+                    <button class="botao-adicionar" type="button">adicionar</button>
+                </div>
+            </article>
+        `;
+    }
 }
 
-criarProdutos(produtos);
-filtrarProdutos();
+/****************************
+    FILTRAR PRODUTOS
+****************************/
+
+function filtrarProdutos(categoria) {
+
+    const produtosFiltrados = [];
+
+    for (const produto of produtos) {
+
+        if (produto.categoria === categoria) {
+            produtosFiltrados.push(produto);
+        }
+    }
+
+    return produtosFiltrados;
+}
+
+
+/****************************
+    BUSCAR PRODUTOS
+****************************/
+
+function buscarProduto(termo) {
+
+    const resultadosEncontrados = [];
+
+    for (const produto of produtos) {
+
+        if (
+            produto.nome.toLowerCase().includes(termo.toLowerCase()) ||
+            produto.categoria.toLowerCase().includes(termo.toLowerCase()) ||
+            produto.descricao.toLowerCase().includes(termo.toLowerCase())
+        ) {
+            resultadosEncontrados.push(produto);
+        }
+    }
+
+    return resultadosEncontrados;
+}
+
+/****************************
+    INTERAÇÕES DA PÁGINA
+****************************/
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+    // ELEMENTOS HTML
+
+    const botoesFiltro = document.querySelectorAll(".filtrar-produtos button:not(#filtrar-todos)");
+    const botaoTodas = document.getElementById("filtrar-todos");
+
+    const campoBusca = document.querySelector(".buscar-item input");
+    console.log("Campo de busca:", campoBusca);
+    const gridResultadosBusca = document.getElementById("grid-resultados-busca");
+    const resultadosBusca = document.getElementById("resultados-busca");
+
+    const tipoOrdenacao = document.getElementById("tipo-ordenacao");
+
+    // EXIBIR TODOS OS PRODUTOS
+
+    criarProdutos(produtos, cardProduto);
+
+
+    // FILTRAR PRODUTOS
+
+    botoesFiltro.forEach(function(botao) {
+
+        botao.addEventListener("click", function() {
+
+            const categoria = botao.textContent.trim();
+
+            produtosExibidos = filtrarProdutos(categoria);
+
+            cardProduto.innerHTML = "";
+
+            criarProdutos(produtosExibidos, cardProduto);
+        });
+
+    });
+
+
+    // EXIBIR TODAS AS CATEGORIAS
+
+    botaoTodas.addEventListener("click", function() {
+
+        produtosExibidos = [...produtos];
+
+        cardProduto.innerHTML = "";
+
+        criarProdutos(produtosExibidos, cardProduto);
+    });
+
+        // ORDENAR PRODUTOS
+
+    tipoOrdenacao.addEventListener("change", function() {
+
+        const ordem = tipoOrdenacao.value;
+
+        // Cria tipo uma cópia do que já tme nos produtos
+        const produtosOrdenados = [...produtosExibidos];
+
+        function converterPreco(preco) {
+            return Number(preco.replace(",", "."));
+        }
+
+        switch (ordem) {
+
+            case "menor":
+                produtosOrdenados.sort((a, b) => {
+                    return converterPreco(a.preco) - converterPreco(b.preco);
+                });
+                break;
+
+            case "maior":
+                produtosOrdenados.sort((a, b) => {
+                    return converterPreco(b.preco) - converterPreco(a.preco);
+                });
+                break;
+
+            case "alfabetico":
+                produtosOrdenados.sort((a, b) => {
+                    return a.nome.localeCompare(b.nome);
+                });
+                break;
+
+            case "ocitebafla":
+                produtosOrdenados.sort((a, b) => {
+                    return b.nome.localeCompare(a.nome);
+                });
+                break;
+        }
+
+        produtosExibidos = produtosOrdenados;
+
+        cardProduto.innerHTML = "";
+
+        criarProdutos(produtosOrdenados, cardProduto);
+
+    });
+
+    // BUSCAR PRODUTOS
+
+    campoBusca.addEventListener("input", function() {
+
+        const termo = campoBusca.value.trim();
+        const resultadosEncontrados = buscarProduto(termo);
+
+        gridResultadosBusca.innerHTML = "";
+
+        if (termo === "") {
+
+            resultadosBusca.style.display = "none";
+
+        } else {
+
+            resultadosBusca.style.display = "block";
+
+            if (resultadosEncontrados.length === 0) {
+
+                gridResultadosBusca.innerHTML = `
+                    <div class="busca-invalida">
+                        <p>Sem resultados...</p>
+                        <img src="img/semresultados.gif" alt="Pica-pau balançando a cabeça em negação">
+                    </div>
+                `;
+
+            } else {
+
+                criarProdutos(resultadosEncontrados, gridResultadosBusca);
+
+            }
+        }
+
+    });
+
+});

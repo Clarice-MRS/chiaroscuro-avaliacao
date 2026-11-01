@@ -20,8 +20,8 @@
     --star: #F59E0B; /*Estrelas de avaliacao*/
 
     --dvds: #0EA5E9;
-    --posteres: #059669;
-    --vinis: #DB2777;
+    --poster: #059669;
+    --vinil: #DB2777;
 
     --fonteTitulo: 'New Reader'; 
     --fontePadrao: 'Inter'; 
@@ -207,13 +207,35 @@ button:hover {
 #resultados-busca {
     display: none;
     position: absolute;
-    top: calc(100% + 5px);;
-    left: 0;
-    width: 100%;
-    background-color: var(--paper);
-    padding: 1rem;
-    max-height: 400px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+    max-height: 80vh;
     overflow-y: auto;
+    box-sizing: border-box;
+
+    padding: 1.5rem;
+    background-color: var(--cards-font);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    z-index: 1001;
+}
+
+#grid-resultados-busca {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+#grid-resultados-busca .produto-info {
+    flex: 0 0 220px;
+    width: 220px;
+    height: auto;
+    min-height: 400px;
 }
 
 .busca-invalida {
@@ -227,16 +249,9 @@ button:hover {
     border-radius: 10px;
 }
 
-#grid-resultados-busca {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    scroll-behavior: auto;
-}
-
 .busca-sucedida {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 500px;
     padding: 0.7rem;
     gap: 0.3rem;
@@ -273,6 +288,12 @@ button:hover {
     border-radius: 20px;
     background-color: var(--cards-font);
     margin-top: 4rem;
+}
+
+.hero a {
+    text-decoration: none;
+    color: var(--cards-font);
+    font-family: var(--fontePadrao);
 }
 
 .novidades {
@@ -417,14 +438,14 @@ button:hover {
     border: none;
 }
 
-.filtrar-itens {
+.filtrar-produtos {
     display: flex;
     align-items: center;
     gap: 0.7rem;
     flex-wrap: wrap;
 }
 
-.filtrar-itens button {
+.filtrar-produtos button {
     background-color: transparent;
     border: 1.5px solid;
     border-radius: 20px;
@@ -437,52 +458,43 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-.filtrar-itens button:nth-child(1) {
-    color: var(--vinis);
-    border-color: var(--vinis);
-}
-
-.filtrar-itens button:nth-child(2) {
-    color: var(--posteres);
-    border-color: var(--posteres);
-}
-
-.filtrar-itens button:nth-child(3) {
+.filtrar-produtos button:nth-child(1) {
     color: var(--dvds);
     border-color: var(--dvds);
 }
 
-.filtrar-itens button:nth-child(4) {
-    color: var(--cds);
-    border-color: var(--cds);
+.filtrar-produtos button:nth-child(2) {
+    color: var(--poster);
+    border-color: var(--poster);
 }
 
-.filtrar-itens button:nth-child(1):hover {
-    background-color: var(--vinis);
+.filtrar-produtos button:nth-child(3) {
+    color: var(--vinil);
+    border-color: var(--vinil);
 }
 
-.filtrar-itens button:nth-child(2):hover {
-    background-color: var(--posteres);
-}
-
-.filtrar-itens button:nth-child(3):hover {
+.filtrar-produtos button:nth-child(1):hover {
     background-color: var(--dvds);
 }
 
-.filtrar-itens button:nth-child(4):hover {
-    background-color: var(--cds);
+.filtrar-produtos button:nth-child(2):hover {
+    background-color: var(--poster);
 }
 
-.filtrar-itens button:last-child {
+.filtrar-produtos button:nth-child(3):hover {
+    background-color: var(--vinil);
+}
+
+.filtrar-produtos button:last-child {
     color: var(--destaquePadrao);
     border-color: var(--destaquePadrao);
 }
 
-.filtrar-itens button:last-child:hover {
+.filtrar-produtos button:last-child:hover {
     background-color: var(--destaquePadrao);
 }
 
-.filtrar-itens button:hover {
+.filtrar-produtos button:hover {
     color: white;
 }
 
@@ -517,20 +529,20 @@ button:hover {
     text-transform: uppercase;
 }
 
-.categoriaposteres {
+.categoriaposter {
     width: 80%;
     align-self: center;
-    background-color: var(--posteres);
+    background-color: var(--poster);
     border-radius: 5px;
     color: var(--paper);
     padding-left: 0.5rem;
     text-transform: uppercase;
 }
 
-.categoriavinis {
+.categoriavinil {
     width: 80%;
     align-self: center;
-    background-color: var(--vinis);
+    background-color: var(--vinil);
     border-radius: 5px;
     color: var(--paper);
     padding-left: 0.5rem;

@@ -33,19 +33,20 @@
             <div class="buscar-item">
                 <i class="bi bi-search"></i>
                 <input type="search" placeholder="Buscar">
-
-                <div id="resultados-busca">
-                    <div id="grid-resultados-busca"></div>
-                </div>
             </div>
 
             <a href="carrinho.html" id="carrinho"><i class="bi bi-basket"></i></a>
-
             <a href="login.html" id="login"><i class="bi bi-person"></i></a>
-
-            <button id="botao-modo-escuro" type="button"><i class="bi bi-moon-stars-fill"></i>escuro</button>
+            <button id="botao-modo-escuro" type="button">
+                <i class="bi bi-moon-stars-fill"></i>escuro
+            </button>
 
         </div>
+
+        <div id="resultados-busca">
+            <div id="grid-resultados-busca"></div>
+        </div>
+
     </header>
 
     <main>
@@ -56,8 +57,8 @@
                     <span id="semana-consumidor">Semana do Consumidor</span>
                     <h2>Sagas com 25% OFF</h2>
                     <p>Em comemoração à Semana do Consumidor, todas as sagas de filmes do nosso catálogo estarão com descontos imperdíveis! É a oportunidade perfeita para adquirir seus títulos favoritos e ampliar sua coleção.</p>
-                    <div class="botao-vermais">
-                        <button id="vermais">CONFIRA!</button>
+                    <div class="botao-confira">
+                        <button id="confira"><a href="promocoes.html">CONFIRA!</a></button>
                     </div>
                 </article>
 
@@ -72,18 +73,18 @@
             <div class="topo-colecao-itens">
                 <div class="filtrar-produtos">
                     <button type="button">DVD</button>
-                    <button type="button">Posteres</button>
-                    <button type="button">Vinis</button>
+                    <button type="button">Poster</button>
+                    <button type="button">Vinil</button>
                     <button type="button" id="filtrar-todos">Todas</button>
                 </div>
 
                 <div class="campo-ordenacao">
                     <select id="tipo-ordenacao" name="tipo-ordenacao">
                         <option value="" selected disabled>Ordenar:</option>
-                        <option value="menor">Menor → maior</option>
-                        <option value="maior">Maior → menor</option>
-                        <option value="alfabetico">A a Z</option>
-                        <option value="ocitebafla">Z a A</option>
+                        <option value="menor">Menor para maior R$</option>
+                        <option value="maior">Maior para menor R$</option>
+                        <option value="alfabetico">alfabético A a Z</option>
+                        <option value="ocitebafla">alfabético Z a A</option>
                     </select>
                 </div>
             </div>
