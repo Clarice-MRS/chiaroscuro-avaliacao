@@ -27,32 +27,25 @@
     <header class="masthead">
 
         <h1>CHIAROSCURO</h1>
-        <div class="info-header">
-            <nav>
-                <ul>
-                    <li><a href=""></a>CD's</li>
-                    <li><a href=""></a>DVD's</li>
-                    <li><a href=""></a>Pôsteres</li>
-                    <li><a href=""></a>Vinis</li>
-                </ul>
-            </nav>
-        
+
+        <div class="funcional-header">
+
             <div class="buscar-item">
                 <i class="bi bi-search"></i>
                 <input type="search" placeholder="Buscar">
 
                 <div id="resultados-busca">
-                    <div id="grid-resultados-busca">
-                        
-                    </div>
+                    <div id="grid-resultados-busca"></div>
                 </div>
             </div>
 
             <a href="carrinho.html" id="carrinho"><i class="bi bi-basket"></i></a>
 
-            <button id="botao-modo-escuro" type="button"><i class="bi bi-moon-stars-fill"></i></button>
-        </div>
+            <a href="login.html" id="login"><i class="bi bi-person"></i></a>
 
+            <button id="botao-modo-escuro" type="button"><i class="bi bi-moon-stars-fill"></i>escuro</button>
+
+        </div>
     </header>
 
     <main>
@@ -60,11 +53,11 @@
         <section class="hero">
             <div class="novidades">
                 <article class="bloco-principal">
-                    <span>Semana do Consumidor</span>
-                    <h2>Veja nossa nova coleção de saltos inspirados na Lady Gaga</h2>
-                    <p>Inspirada na diva do POP, nossa nova coleção de saltos traz um ar especial para o seu verão.</p>
+                    <span id="semana-consumidor">Semana do Consumidor</span>
+                    <h2>Sagas com 25% OFF</h2>
+                    <p>Em comemoração à Semana do Consumidor, todas as sagas de filmes do nosso catálogo estarão com descontos imperdíveis! É a oportunidade perfeita para adquirir seus títulos favoritos e ampliar sua coleção.</p>
                     <div class="botao-vermais">
-                        <button id="vermais">Ver Coleção</button>
+                        <button id="vermais">CONFIRA!</button>
                     </div>
                 </article>
 
@@ -78,27 +71,21 @@
         <section id="colecao-itens">
             <div class="topo-colecao-itens">
                 <div class="filtrar-itens">
-                    <button type="button">Saltos</button>
-                    <button type="button">Posteres</button>
+                    <button type="button">CD's</button>
                     <button type="button">DVD's</button>
-                    <button type="button">Action Figures</button>
+                    <button type="button">Posteres</button>
+                    <button type="button">Vinis</button>
                     <button type="button" id="filtrar-todos">Todas</button>
                 </div>
 
-                <div class="ordenar-itens">
-                    <span class="total-itens"></span>
-
-                    <div class="ordenar-itens">
-                        <i class="bi bi-search"></i>
-                        <select id="tipo-ordenacao" name="tipo-ordenacao" required>
-                            <option value="ordenar">Ordenar: </option>
-                            <option value="menor">menor -> maior</option>
-                            <option value="maior">maior -> menor</option>
-                            <option value="alfabetico">A a Z</option>
-                            <option value="ocitebafla">Z a A</option>
-                        </select>
-                    </div>
-
+                <div class="campo-ordenacao">
+                    <select id="tipo-ordenacao" name="tipo-ordenacao">
+                        <option value="" selected disabled>Ordenar:</option>
+                        <option value="menor">Menor → maior</option>
+                        <option value="maior">Maior → menor</option>
+                        <option value="alfabetico">A a Z</option>
+                        <option value="ocitebafla">Z a A</option>
+                    </select>
                 </div>
             </div>
 
@@ -109,11 +96,11 @@
 
         <section class="bloco-final">
             <div id="newsletter">
-                <h2>Venha para nossa Passarela!</h2>
+                <h2>Venha fazer parte do nosso acervo!</h2>
                 <p>Assine, fique por dentro das novidades e ganhe 13% de desconto na sua primeira compra.</p>
                 <form id="form-newsletter">
                     <input type="email" id="email" placeholder="digite seu email" required>
-                    <button type="submit">Desfilar</button>
+                    <button type="submit">assinar</button>
                 </form>
                 <div id="mensagem-newsletter"></div>
             </div>

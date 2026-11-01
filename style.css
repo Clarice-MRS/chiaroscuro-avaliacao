@@ -1,3 +1,5 @@
+
+
 /********************
     GERAL 
 ********************/
@@ -9,22 +11,17 @@
 
 :root {
     --fundoPagina: #ca2e28; /* fundo de pagina */
-    --ink: #181A2A ; /* texto principal*/
-    --slate: #6B7280; /* texto secundario descricao*/
-    --mist: #F3F4F6; /* cards campos*/ 
-    --line: #E5E7EB; /* linhas e bordas */
+    --destaquePagina: #f5eee5;
+    --destaquePadrao: #020412 ; /* texto principal*/
+    --cards-font: #F3F4F6; /* cards-font campos*/ 
     --accent: #6D28D9; /* marca, botoes de acao e destaques */
     --price: #059669; /*Precos e selos de oferta*/
     --star: #F59E0B; /*Estrelas de avaliacao*/
 
-    --dvds: #6D28D9;
-    --saltos: #0EA5E9;
-    --poster: #059669;
-    --figure: #DB2777;
-
-    --padraoChiaroscuro: hsl(30, 23%, 95%);
-    --padrao-Destaque: #153985;
-    --botao-Destaque: #831d1d;
+    --cds: #6D28D9;
+    --dvds: #0EA5E9;
+    --posteres: #059669;
+    --vinis: #DB2777;
 
     --fonteTitulo: 'New Reader'; 
     --fontePadrao: 'Inter'; 
@@ -35,6 +32,7 @@
 html {
     scroll-behavior: smooth;
     background-color: var(--fundoPagina);
+    font-family: var(--fontePadrao);
 }
 
 /********************
@@ -46,9 +44,6 @@ button {
     padding: 0.5rem;
     border-radius: 20px;
     transition: transform 0.3s;
-    background-color: var(--paper);
-    color: var(--ink);
-    border: 1px solid var(--line);
 }
 
 button:hover {
@@ -56,17 +51,28 @@ button:hover {
     transform: scale(1.05);
 }
 
+#botao-modo-escuro {
+    border: 1px solid var(--destaquePadrao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    width: 100px;
+    height: 38px;
+}
+
 .hero button{
-    width: 50%;
-    color: var(--line);
-    background-color: var(--botao-Destaque);
+    width: 100px;
+    color: var(--cards-font);
+    background-color: var(--fundoPagina);
     border: none;
 }
 
 #newsletter button {
-    color: var(--line);
+    color: var(--cards-font);
     font-size: 13px;
-    background-color: var(--botao-Destaque);
+    background-color: var(--fundoPagina);
     border: none;
 }
 
@@ -91,24 +97,28 @@ button:hover {
     padding-left: 4rem;
     padding-right: 8rem;
     align-items: center;
-    background-color: var(--ink);
+    background-color: var(--destaquePadrao);
 }
 
 .barra-superior span {
     font-family: var(--fontePadrao);
-    color: var(--line);
+    color: var(--cards-font);
 }
 
 #info-mais ul{
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 #info-mais ul a {
     font-family: var(--fontePadrao);
     text-decoration: none;
-    color: var(--line);
+    color: var(--cards-font);
+}
+
+#info-mais ul a:hover{
+    text-decoration: underline;
 }
 
 /**************************
@@ -116,63 +126,52 @@ button:hover {
 **************************/
 
 .masthead {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
+
     position: sticky;
     top: 0;
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 10rem;
-    background-color: var(--padraoChiaroscuro);
+    z-index: 1000;
+
+    padding: 1rem 2rem;
+    background-color: var(--destaquePagina);
     box-shadow: var(--sombreamento);
     margin-bottom: 1rem;
+}
+
+.funcional-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.funcional-header i:not(#botao-modo-escuro i) {
+    font-size: 25px;
 }
 
 .masthead h1 {
     font-family: var(--fonteTitulo);
     font-weight: 200;
 
-    color: var(--ink);
-    padding: 10px 0px;
+    color: var(--destaquePadrao);
+    padding: 10px 0;
     width: fit-content;
     padding-left: 1rem;
     letter-spacing: 1rem;
-    
-}
-
-.info-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-}
-
-.info-header ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin-right: 2rem ;
-    font-family: var(--fontePadrao);
-}
-
-.info-header ul a {
-    position: relative;
-    text-decoration: none;
-    color: var(--ink);
 }
 
 .masthead a {
     text-decoration: none;
-    color: var(--ink);
+    color: var(--destaquePadrao);
 }
 
 /* BUSCAR NOTÍCIAS */
 
 .buscar-item, #tipo-ordenacao {
-    background-color: var(--mist);
+    background-color: var(--cards-font);
     display: flex;
-    border: 2px solid var(--line);
+    border: 2px solid var(--cards-font);
     border-radius: 20px;
     align-items: center;
     position: relative;
@@ -185,11 +184,11 @@ button:hover {
     font-size: 20px;
     padding-left: 1rem;
     padding-right: 0.5rem;
-    color: var(--ink);
+    color: var(--destaquePadrao);
 }
 
 .buscar-item input {
-    background-color: var(--mist);
+    background-color: var(--cards-font);
     width: 100%;
     padding: 10px 0px 10px 0px;
     border: none;
@@ -240,7 +239,7 @@ button:hover {
 }
 
 .busca-sucedida .manchete{
-    color: var(--ink);
+    color: var(--destaquePadrao);
     font-family: var(--fonteTitulo);
     margin-top: 0.5rem;
     font-size: 16px;
@@ -268,7 +267,8 @@ button:hover {
     width: 70%;
     margin: 0 auto;
     border-radius: 20px;
-    background-color: var(--padraoChiaroscuro);
+    background-color: var(--cards-font);
+    margin-top: 4rem;
 }
 
 .novidades {
@@ -280,16 +280,30 @@ button:hover {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    background-color: var(--padraoChiaroscuro);
+    align-items: center;
     justify-content: center;
     padding: 1rem;
     gap: 1rem;
+    background-color: var(--cards-font);
     font-family: var(--fontePadrao);
+    margin-right: 2rem;
 }
 
-.bloco-principal h2 { /* ??????? não foi*/
+#semana-consumidor {
+    width: 90%;
+    background-color: var(--destaquePadrao);
+    color: var(--cards-font);
+    text-align: center;
+    padding: 0.2rem;
+}
+
+.bloco-principal h2 { 
     font-family: var(--fonteTitulo);
-    font-size: 25px;
+    font-size: 35px;
+}
+
+.bloco-principal p {
+    text-align: justify;
 }
 
 .hero img {
@@ -302,21 +316,113 @@ button:hover {
     GRID PRODUTOS
 ********************/
 
-.colecao-itens {
-
-
+#colecao-itens {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: var(--cards-font);
+    margin-top: 4rem;
 }
-
-/********************
-    BLOCO FINAL 
-********************/
 
 .topo-colecao-itens {
     display: flex;
-    justify-content: center;
-    width: 70%;
-    margin: 0 auto;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem ;
+}
+
+.filtrar-itens {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.filtrar-itens button {
+    background-color: transparent;
+    border: 1.5px solid;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtrar-itens button:nth-child(1) {
+    color: var(--vinis);
+    border-color: var(--vinis);
+}
+
+.filtrar-itens button:nth-child(2) {
+    color: var(--posteres);
+    border-color: var(--posteres);
+}
+
+.filtrar-itens button:nth-child(3) {
+    color: var(--dvds);
+    border-color: var(--dvds);
+}
+
+.filtrar-itens button:nth-child(4) {
+    color: var(--cds);
+    border-color: var(--cds);
+}
+
+.filtrar-itens button:nth-child(1):hover {
+    background-color: var(--vinis);
+}
+
+.filtrar-itens button:nth-child(2):hover {
+    background-color: var(--posteres);
+}
+
+.filtrar-itens button:nth-child(3):hover {
+    background-color: var(--dvds);
+}
+
+.filtrar-itens button:nth-child(4):hover {
+    background-color: var(--cds);
+}
+
+.filtrar-itens button:last-child {
+    color: var(--destaquePadrao);
+    border-color: var(--destaquePadrao);
+}
+
+.filtrar-itens button:last-child:hover {
+    background-color: var(--destaquePadrao);
+}
+
+.filtrar-itens button:hover {
+    color: white;
+}
+
+.campo-ordenacao {
+    display: flex;
+    align-items: center;
+
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--destaquePadrao);
+    border-radius: 20px;
+}
+
+.campo-ordenacao select {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--destaquePadrao);
+
+    cursor: pointer;
 }
 
 /********************
@@ -343,7 +449,8 @@ button:hover {
     align-items: center;
     width: 100%;
     padding: 2rem;
-    background-color: var(--padrao-Destaque);
+    background-color: var(--destaquePadrao);
+    color: var(--cards-font);
     border-radius: 40px;
     gap: 1rem;
     margin: 2rem;
@@ -351,18 +458,18 @@ button:hover {
 
 #newsletter h2 {
     font-size: 30px;
-    color: var(--line);
-    font-family: var(--fonteTitulo); 
+    color: var(cards-font);
+    font-family: var(--fontePadrao); 
 }
 
 #newsletter p {
-    color: var(--line);
+    color: var(--cards-font);
     font-family: var(--fontePadrao);
 }
 
 #newsletter input {
-    width: 60%;
-    background-color: var(--mist);
+    width: 300px;
+    background-color: var(--cards-font);
     font-family: var(--fontePadrao);
     border-radius: 15px;
     border: none;
@@ -375,19 +482,20 @@ button:hover {
 }
 
 .mensagem-confirmacao {
-    color: var(--line);
+    color: var(--cards-font);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     border-radius: 15px;
-    background-color: var(--botao-Destaque);
+    background-color: var(--destaquePagina);
+    color: var(--destaquePadrao);
 }
 
 .mensagem-confirmacao strong {
     font-size: 20px;
-    color: var(--line);
-    font-family: var(--fonteTitulo);
+    color: var(--cards-font);
+    font-family: var(--fontePadrao);
     padding: 0.5rem;
 }
 
@@ -409,8 +517,8 @@ footer {
     padding: 1rem;
     align-items: center;
     justify-content: center;
-    background-color: var(--padraoChiaroscuro);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    background-color: var(--destaquePagina);
+    box-shadow: var(--sombreamento);
 }
 
 .footer-institucional {
@@ -419,7 +527,7 @@ footer {
     align-items: center;
     justify-content: center;
     padding-bottom: 2rem;
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 3px solid var(--destaquePadrao);
 }
 
 footer h1{
@@ -429,6 +537,11 @@ footer h1{
     color:var(--corDestaquePadrao);
     padding-bottom: 1rem;
     letter-spacing: 1rem;
+}
+
+footer h2 {
+    font-weight: 100;
+    font-size: 20px;
 }
 
 .footer-institucional li a{
@@ -447,7 +560,7 @@ footer h1{
 
 .info-institucional a {
     color: black;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .footer-social {
@@ -467,10 +580,9 @@ footer h1{
 }
 
 .footer-social a {
-    color: var(--corFundoPadrao);
     font-size: 25px;
     margin: 1.5rem;
-    background-color: var(--padrao-Destaque);
+    background-color: var(--destaquePadrao);
     padding: 0.5rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
@@ -480,4 +592,8 @@ footer h1{
 
 .footer-social p {
     text-align: center;
+}
+
+.footer-social i {
+    color: var(--cards-font);
 }

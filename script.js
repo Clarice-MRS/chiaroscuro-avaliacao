@@ -81,8 +81,7 @@ const produtos = [
     }
 ]
 
-const formulario = document.getElementById("form-newsletter");
-const mensagem = document.getElementById("mensagem-newsletter");
+
 
 
 /****MODO ESCURO****/
@@ -118,6 +117,9 @@ const mensagem = document.getElementById("mensagem-newsletter");
     NEWSLETTER - MENSAGEM
 ****************************/
 
+const formulario = document.getElementById("form-newsletter");
+const mensagem = document.getElementById("mensagem-newsletter");
+
 if (formulario && mensagem) {
         
     formulario.addEventListener("submit", function(event) {
@@ -125,12 +127,12 @@ if (formulario && mensagem) {
         event.preventDefault();
         
         mensagem.innerHTML = `
-        <div class="mensagem-confirmacao">
-            <strong>Assinatura confirmada. Aproveite o Desfile!</strong>
-            <p>Prepare sua caixa de entrada e a sua carteira: as melhores promoções estão a caminho.</p>
-            <p>Ser básico não pode ser a sua cara.</p>
-            <img src="img/aplausos.gif" alt="pica-pau levantando um cartaz escrito *applause*">
-        </div>
+            <div class="mensagem-confirmacao">
+                <strong>Você está oficialmente no nosso catálogo! 🎶🎬</strong>
+                <p>Prepare a pipoca: novidades, clássicos, raridades e ofertas estão a caminho da sua caixa de entrada.</p>
+                <p>Porque música boa se escuta e filme bom se revive!</p>
+                <img src="img/pica-pau-dancando.gif" alt="pica-pau dançando">
+            </div>
         `;
         
         formulario.reset();
