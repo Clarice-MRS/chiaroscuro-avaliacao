@@ -135,7 +135,7 @@ const midnightminuet = new Produto
     (
         10,
         "The Yagas - Midnight Minuet",
-        " 20x30 cm • Papel holográfico",
+        "20x30 cm • Papel holográfico",
         18.90,
         "Poster",
         "img/theyagas.jpg",
@@ -169,6 +169,110 @@ const killbill = new Produto
         5
     )
 
+const jogosvorazes = new Produto
+
+    (
+        13,
+        "Jogos Vorazes",
+        "2012 • Ação • 2h22min",
+        37.65,
+        "DVD",
+        "img/jogosvorazes.jpg",
+        "pôster do filme jogos vorazes",
+        5
+    )
+
+const jogosvorazesemchamas = new Produto
+
+    (
+        14,
+        "Jogos Vorazes",
+        "2013 • Ação • 2h22min",
+        38.80,
+        "DVD",
+        "img/jogosvorazesemchamas.jpg",
+        "pôster do filme jogos vorazes em chamas",
+        5
+    )
+
+const jogosvorazesesperanca = new Produto
+
+    (
+        15,
+        "Jogos Vorazes: a esperança",
+        "2014 • Ação • 2h03min",
+        40.50,
+        "DVD",
+        "img/jogosvorazesaesperanca.jpg",
+        "pôster do filme jogos vorazes a esperança parte 1",
+        5
+    )
+
+const jogosvorazesesperanca2 = new Produto
+
+    (
+        16,
+        "Jogos Vorazes: a esperança 2",
+        "2015 • Ação • 2h37min",
+        42.65,
+        "DVD",
+        "img/jogosvorazesaesperanca2.jpg",
+        "pôster do filme jogos vorazes a esperança o final",
+        5
+    )
+
+const thenothing = new Produto
+
+    (
+        17,
+        "The Nothing - Korn",
+        "2019 • Metal • 45RPM",
+        303.91,
+        "Vinil",
+        "img/thenothing.jpg",
+        "vinil the nothing - korn",
+        4
+    )
+
+const babyonemoretime = new Produto
+
+    (
+        18,
+        "Baby one more time - Britney Spears",
+        "1999 • Pop • 33RPM",
+        449.90,
+        "Vinil",
+        "img/babyonemoretime.jpg",
+        "vinil baby one more time - britney spears",
+        4
+    )
+
+const estranhomundodejack = new Produto
+
+    (
+        19,
+        "O estranho mundo de Jack",
+        "20x30 cm • Papel holográfico",
+        13.90,
+        "Poster",
+        "img/jack.jpg",
+        "pôster do filme o estranho mundo de jack",
+        4
+    )
+
+const ritalee = new Produto
+
+    (
+        20,
+        "Rita Lee - Rita Lee",
+        "1979 • Pop Rock • 33RPM",
+        229.90,
+        "Vinil",
+        "img/ritalee.jpg",
+        "vinil Rita Lee - Rita Lee",
+        5
+    )
+
 const produtos = [
     desobediencia,
     carol,
@@ -181,5 +285,13 @@ const produtos = [
     rare,
     midnightminuet,
     odragaochines,
-    killbill
+    killbill,
+    jogosvorazes,
+    jogosvorazesemchamas,
+    jogosvorazesesperanca,
+    jogosvorazesesperanca2,
+    thenothing,
+    babyonemoretime,
+    estranhomundodejack,
+    ritalee
 ];

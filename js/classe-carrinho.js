@@ -4,9 +4,6 @@ class Carrinho {
         this.itens = [];
     }
 
-
-    // ADICIONAR PRODUTO
-
     adicionarItem(produto, quantidade = 1) {
 
         const itemExistente = this.itens.find(
@@ -14,22 +11,14 @@ class Carrinho {
         );
 
         if (itemExistente) {
-
             itemExistente.quantidade += quantidade;
-
         } else {
-
             this.itens.push({
                 produto: produto,
                 quantidade: quantidade
             });
-
         }
-
     }
-
-
-    // REMOVER PRODUTO
 
     removerItem(id) {
 
@@ -39,17 +28,11 @@ class Carrinho {
 
     }
 
-
-    // LIMPAR CARRINHO
-
     limparCarrinho() {
 
         this.itens = [];
 
     }
-
-
-    // CALCULAR SUBTOTAL
 
     calcularSubtotal() {
 
@@ -60,13 +43,9 @@ class Carrinho {
             subtotal += item.produto.preco * item.quantidade;
 
         }
-
         return subtotal;
 
     }
-
-
-    // CALCULAR TAXA
 
     calcularTaxa() {
 
@@ -75,20 +54,12 @@ class Carrinho {
         if (subtotal === 0 || subtotal > 90) {
             return 0;
         }
-
         return 8.90;
-
     }
-
-
-    // CALCULAR TOTAL
 
     calcularTotal() {
-
         return this.calcularSubtotal() + this.calcularTaxa();
-
     }
-
 }
 
 
@@ -97,17 +68,13 @@ class Carrinho {
 function carregarCarrinho() {
 
     const dados = JSON.parse(localStorage.getItem("carrinho")) || [];
-
     const carrinho = new Carrinho();
 
     for (const item of dados) {
-
         const quantidade = Number(item.quantidade);
-
         if (!Number.isFinite(quantidade) || quantidade <= 0) {
             continue;
         }
-
         const produto = new Produto(
             Number(item.id),
             item.nome,
@@ -118,15 +85,10 @@ function carregarCarrinho() {
             item.alt,
             Number(item.avaliacao ?? 0)
         );
-
-        carrinho.adicionarItem(produto, quantidade);
-
+      carrinho.adicionarItem(produto, quantidade);
     }
-
     return carrinho;
-
 }
-
 
 // SALVAR CARRINHO
 
@@ -137,7 +99,6 @@ function salvarCarrinho(carrinho) {
     for (const item of carrinho.itens) {
 
         dados.push({
-
             id: item.produto.id,
             nome: item.produto.nome,
             descricao: item.produto.descricao,
@@ -147,11 +108,7 @@ function salvarCarrinho(carrinho) {
             alt: item.produto.alt,
             avaliacao: item.produto.avaliacao,
             quantidade: item.quantidade
-
         });
-
     }
-
     localStorage.setItem("carrinho", JSON.stringify(dados));
-
 }

@@ -3,13 +3,9 @@
 ****************************/
 
 const containerItens = document.getElementById("container-itens-pedido");
-
 const carrinhoVazio = document.getElementById("carrinho-vazio");
-
 const botaoZerar = document.getElementById("zerar-pedido");
-
 const carrinho = carregarCarrinho();
-
 
 /****************************
     FORMATAR PREÇO
@@ -23,7 +19,6 @@ function formatarPreco(valor) {
     }).format(valor);
 
 }
-
 
 /****************************
     MOSTRAR ITENS
@@ -41,28 +36,20 @@ function mostrarItensCarrinho() {
 
         carrinhoVazio.style.display =
             carrinho.itens.length === 0 ? "block" : "none";
-
     }
 
     for (const item of carrinho.itens) {
 
         containerItens.innerHTML += `
-
             <div class="item-carrinho" data-id="${item.produto.id}">
-
                 <img
                     src="${item.produto.imagem}"
                     alt="${item.produto.alt}"
                 >
-
                 <div class="info-item-carrinho">
-
                     <h3>${item.produto.nome}</h3>
-
                     <p>${formatarPreco(item.produto.preco)}</p>
-
                     <div class="controle-quantidade">
-
                         <button
                             class="alterar-quantidade"
                             data-acao="diminuir"
@@ -73,7 +60,6 @@ function mostrarItensCarrinho() {
                         </button>
 
                         <span>${item.quantidade}</span>
-
                         <button
                             class="alterar-quantidade"
                             data-acao="aumentar"
@@ -81,23 +67,16 @@ function mostrarItensCarrinho() {
                         >
                             +
                         </button>
-
                     </div>
-
                 </div>
 
                 <button class="apagar-item" type="button">
                     <i class="bi bi-trash"></i>
                 </button>
-
             </div>
-
         `;
-
     }
-
 }
-
 
 /****************************
     ATUALIZAR TOTAL
@@ -106,17 +85,11 @@ function mostrarItensCarrinho() {
 function atualizarTotal() {
 
     const subtotal = carrinho.calcularSubtotal();
-
     const taxa = carrinho.calcularTaxa();
-
     const total = carrinho.calcularTotal();
-
     const elementoSubtotal = document.getElementById("subtotal");
-
     const elementoTotal = document.getElementById("valor-total");
-
     const elementoTaxa = document.getElementById("taxa-entrega");
-
 
     if (elementoSubtotal) {
         elementoSubtotal.textContent = formatarPreco(subtotal);
@@ -129,7 +102,6 @@ function atualizarTotal() {
     if (elementoTotal) {
         elementoTotal.textContent = formatarPreco(total);
     }
-
 }
 
 
@@ -142,9 +114,7 @@ if (containerItens) {
     containerItens.addEventListener("click", function(event) {
 
         const botaoQuantidade = event.target.closest(".alterar-quantidade");
-
         const botaoExcluir = event.target.closest(".apagar-item");
-
         const itemHTML = event.target.closest(".item-carrinho");
 
         if (!itemHTML) {
@@ -152,7 +122,6 @@ if (containerItens) {
         }
 
         const id = Number(itemHTML.dataset.id);
-
 
         // ALTERAR QUANTIDADE
 
@@ -174,21 +143,14 @@ if (containerItens) {
                 botaoQuantidade.dataset.acao === "diminuir" &&
                 item.quantidade > 1
             ) {
-
                 item.quantidade--;
-
             }
 
             salvarCarrinho(carrinho);
-
             mostrarItensCarrinho();
-
             atualizarTotal();
-
             return;
-
         }
-
 
         // EXCLUIR ITEM
 
@@ -203,23 +165,14 @@ if (containerItens) {
             }
 
             if (confirm(`Deseja remover ${item.produto.nome} do carrinho?`)) {
-
                 carrinho.removerItem(id);
-
                 salvarCarrinho(carrinho);
-
                 mostrarItensCarrinho();
-
                 atualizarTotal();
-
             }
-
         }
-
     });
-
 }
-
 
 /****************************
     ZERAR CARRINHO
@@ -234,26 +187,33 @@ if (botaoZerar) {
         }
 
         if (confirm("Deseja remover todos os produtos do carrinho?")) {
-
             carrinho.limparCarrinho();
-
             salvarCarrinho(carrinho);
-
             mostrarItensCarrinho();
-
             atualizarTotal();
+        }
+    });
+}
 
+const botaoPagar = document.getElementById("ir-pagamento");
+
+if (botaoPagar) {
+    botaoPagar.addEventListener("click", function() {
+
+        const carrinho = carregarCarrinho();
+
+        if (carrinho.itens.length > 0) {
+            window.location.href = "pagamento.html";
+        } else {
+            alert("Adicione algum produto ao carrinho antes de continuar!");
         }
 
     });
-
 }
-
 
 /****************************
     INICIALIZAÇÃO
 ****************************/
 
 mostrarItensCarrinho();
-
 atualizarTotal();

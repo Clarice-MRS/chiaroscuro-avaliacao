@@ -49,50 +49,58 @@
 
     </header>
 
-    <main>
-        
-        <section class="hero">
-            <div class="novidades">
-                <article class="bloco-principal">
-                    <span id="semana-consumidor">Semana do Consumidor</span>
-                    <h2>Sagas com 25% OFF</h2>
-                    <p>Em comemoração à Semana do Consumidor, todas as sagas de filmes do nosso catálogo estarão com descontos imperdíveis! É a oportunidade perfeita para adquirir seus títulos favoritos e ampliar sua coleção.</p>
-                    <div class="botao-confira">
-                        <button id="confira"><a href="promocoes.html">CONFIRA!</a></button>
+    <main class="pagina-promocoes">
+
+        <section class="promocao-saga">
+
+            <div class="cabecalho-saga">
+                <div>
+                    <span class="categoria-saga">COLEÇÃO COMPLETA</span>
+                    <h2>Jogos Vorazes</h2>
+                    <p>Entre na arena! tenha essa coleção única.</p>
+                </div>
+
+                <span class="desconto-saga">-25%</span>
+            </div>
+
+            <div id="filmes-saga" class="filmes-saga">
+                <!-- Os filmes serão inseridos pelo JavaScript -->
+            </div>
+
+            <div class="resumo-promocao">
+
+                <div class="valores-promocao">
+                    <div>
+                        <span>Valor original</span>
+                        <strong id="preco-original"></strong>
                     </div>
-                </article>
 
-                <aside id="foto-ladygaga">
-                    <img src="img/semana_do_consumidor.jpg" alt="amigos na sala de cinema">
-                </aside>
-            </div>
-        
-        </section>
+                    <div>
+                        <span>Desconto de 25%</span>
+                        <strong id="valor-desconto"></strong>
+                    </div>
 
-        <section id="colecao-itens">
-            <div class="topo-colecao-itens">
-                <div class="filtrar-produtos">
-                    <button type="button">DVD</button>
-                    <button type="button">Poster</button>
-                    <button type="button">Vinil</button>
-                    <button type="button" id="filtrar-todos">Todas</button>
+                    <div class="preco-final">
+                        <span>Preço promocional</span>
+                        <strong id="preco-promocional"></strong>
+                    </div>
                 </div>
 
-                <div class="campo-ordenacao">
-                    <select id="tipo-ordenacao" name="tipo-ordenacao">
-                        <option value="" selected disabled>Ordenar:</option>
-                        <option value="menor">Menor para maior R$</option>
-                        <option value="maior">Maior para menor R$</option>
-                        <option value="alfabetico">alfabético A a Z</option>
-                        <option value="ocitebafla">alfabético Z a A</option>
-                    </select>
-                </div>
-            </div>
+                <button type="button" id="adicionar-saga">
+                    Adicionar ao carrinho
+                </button>
 
-            <div id="grid-colecao-itens">
+                <p class="aviso-promocao">
+                    Oferta válida para a compra dos quatro filmes juntos.
+                </p>
+
+                <p id="mensagem-promocao"></p>
 
             </div>
+
         </section>
+
+    </main>
 
         <section class="bloco-final">
             <div id="newsletter">
@@ -134,6 +142,9 @@
         </div>
 
     </footer>
-    <script src="script.js"></script>
+    <script src="js/Produto.js"></script>
+    <script src="js/classe-carrinho.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/promocoes.js"></script>
 </body>
 </html>
