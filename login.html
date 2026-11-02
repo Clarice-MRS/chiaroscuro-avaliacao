@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CHIAROSCURO</title>
+</head>
+<body>
+
+    <header class="masthead">
+
+        <h1>CHIAROSCURO</h1>
+
+        <div class="funcional-header">
+
+            <a href="index.html" id="casa"><i class="bi bi-house"></i></a>
+  
+            <button id="botao-modo-escuro" type="button">
+                <i class="bi bi-moon-stars-fill"></i>escuro
+            </button>
+
+        </div>
+
+    </header>
+
+<main>
+    <section class="area-autenticacao">
+
+        <div class="titulo-autenticacao">
+            <h2>FAÇA PARTE DA MATRIZ</h2>
+        </div>
+
+        <div class="formularios-autenticacao">
+  
+            <article class="bloco-autenticacao">
+
+                <h3>Já tem uma conta?</h3>
+                <p class="descricao-autenticacao">
+                    Entre e continue sua experiência conosco.
+                </p>
+
+                <form id="form-login">
+
+                    <div class="campo-autenticacao">
+                        <label for="identificador-login">Nome ou e-mail</label>
+                        <input
+                            type="text"
+                            id="identificador-login"
+                            placeholder="Digite seu nome ou e-mail"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="senha-login">Senha</label>
+                        <input
+                            type="password"
+                            id="senha-login"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="botao-autenticacao">
+                        Entrar
+                    </button>
+
+                </form>
+
+            </article>
+
+            <article class="bloco-autenticacao bloco-cadastro">
+
+                <h3>É sua primeira visita?</h3>
+                <p class="descricao-autenticacao">
+                    Crie sua conta e faça parte do nosso acervo.
+                </p>
+
+                <form id="form-cadastro">
+
+                    <div class="campo-autenticacao">
+                        <label for="nome-cadastro">Nome</label>
+                        <input
+                            type="text"
+                            id="nome-cadastro"
+                            placeholder="Como podemos te chamar?"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="email-cadastro">E-mail</label>
+                        <input
+                            type="email"
+                            id="email-cadastro"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="senha-cadastro">Senha</label>
+                        <input
+                            type="password"
+                            id="senha-cadastro"
+                            placeholder="Crie uma senha"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <small>A senha deve ter pelo menos 8 caracteres.</small>
+                    </div>
+
+                    <button type="submit" class="botao-autenticacao">
+                        Criar conta
+                    </button>
+
+                </form>
+
+            </article>
+
+        </div>
+
+        <p id="mensagem-autenticacao" role="status" aria-live="polite"></p>
+
+    </section>
+</main>
+
+    <footer id="footer">
+
+        <div class="footer-institucional">
+            <h1>CHIAROSCURO</h1>
+            <nav class="info-institucional">
+                <ul>
+                    <li><a href="">Trocas</a></li>
+                    <li><a href="mailto:chiaroscuro@matriz.com.br">Fale Conosco</a></li>
+                    <li><a href="">Privacidade</a></li>
+                    <li><a href="">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-social">
+            <h2>Acompanhe nossas novidades nas redes sociais!</h2>
+            <nav>
+                <ul>
+                    <li><a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a></i></li>
+                    <li><a href="https://x.com"><i class="bi bi-twitter-x"></i></a></i></li>
+                    <li><a href="https://www.tiktok.com"><i class="bi bi-tiktok"></i></a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 CHIAROSCURO - MATRIZ</p>
+        </div>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CHIAROSCURO</title>
+</head>
+<body>
+    <div class="barra-superior">
+        <div id="info-frete">
+            <span class="frete-gratis">Frete Grátis acima de R$ 90,00</span>
+        </div>
+
+        <div id="info-mais">
+            <nav>
+                <ul>
+                    <li><a href="">Acompanhe seu pedido</a></li>
+                    <li><a href="#footer">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <header class="masthead">
+
+        <h1>CHIAROSCURO</h1>
+
+        <div class="funcional-header">
+
+
+            <a href="index.html" id="casa"><i class="bi bi-house"></i></a>
+            <a href="login.html" id="login"><i class="bi bi-person"></i></a>
+            <button id="botao-modo-escuro" type="button">
+                <i class="bi bi-moon-stars-fill"></i>escuro
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container-carrinho">
+
+            <section class="container-pedido">
+
+                <article class="itens-pedido">
+                    <h2>Itens do pedido</h2>
+
+                    <div id="carrinho-vazio" style="display: none;">
+                        <p>Seu carrinho está vazio!</p>
+                    </div>
+
+                    <div id="container-itens-pedido"></div>
+                </article>
+
+                <aside class="resumo-pedido">
+                    <h2>Resumo do pedido</h2>
+
+                    <div class="valor-pedido">
+                        <p>Subtotal</p>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="res-tipo-pedido">
+                        <p>Taxa de entrega</p>
+                        <span id="taxa-entrega">R$ 0,00</span>
+                    </div>
+
+                    <div class="valor-total">
+                        <p>Valor total</p>
+                        <span id="valor-total">R$ 0,00</span>
+                    </div>
+
+                    <div class="resumo-pedido-botoes">
+                        <button type="button" id="ir-pagamento">Pagar</button>
+                        <button type="button" id="zerar-pedido">Zerar pedido</button>
+                    </div>
+                </aside>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer id="footer">
+
+        <div class="footer-institucional">
+            <h1>CHIAROSCURO</h1>
+            <nav class="info-institucional">
+                <ul>
+                    <li><a href="">Trocas</a></li>
+                    <li><a href="mailto:chiaroscuro@matriz.com.br">Fale Conosco</a></li>
+                    <li><a href="">Privacidade</a></li>
+                    <li><a href="">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-social">
+            <h2>Acompanhe nossas novidades nas redes sociais!</h2>
+            <nav>
+                <ul>
+                    <li><a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a></i></li>
+                    <li><a href="https://x.com"><i class="bi bi-twitter-x"></i></a></i></li>
+                    <li><a href="https://www.tiktok.com"><i class="bi bi-tiktok"></i></a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 CHIAROSCURO - MATRIZ</p>
+        </div>
+
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/Produto.js"></script>
+    <script src="js/classe-carrinho.js"></script>
+    <script src="js/carrinho.js"></script>
+</body>
+</html>

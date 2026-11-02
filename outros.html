@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <title>Informações | CHIAROSCURO</title>
+</head>
+
+<body>
+
+    <header class="masthead">
+        <h1>CHIAROSCURO</h1>
+
+        <div class="funcional-header">
+            <a href="index.html" aria-label="Voltar para a página inicial">
+                <i class="bi bi-house"></i>
+            </a>
+
+            <button id="botao-modo-escuro" type="button">
+                <i class="bi bi-moon-stars-fill"></i> escuro
+            </button>
+        </div>
+    </header>
+
+    <main class="pagina-informacoes">
+
+        <section class="introducao-informacoes">
+            <p class="subtitulo-informacoes">CENTRAL DE ATENDIMENTO</p>
+            <h2>Como podemos ajudar?</h2>
+        </section>
+
+
+        <section class="secao-informacoes" id="trocas">
+
+            <div class="cabecalho-secao">
+                <h2>Trocas e devoluções</h2>
+                <p>
+                    Teve algum problema com seu pedido? Entre em contato
+                    com a nossa equipe preenchendo o formulário abaixo.
+                </p>
+            </div>
+
+            <form id="form-troca" class="formulario-informacoes">
+
+                <div class="campo-informacao">
+                    <label for="nome-troca">Nome completo</label>
+                    <input type="text" id="nome-troca"
+                        placeholder="Seu nome" required>
+                </div>
+
+                <div class="campo-informacao">
+                    <label for="email-troca">E-mail</label>
+                    <input type="email" id="email-troca"
+                        placeholder="seuemail@email.com" required>
+                </div>
+
+                <div class="campo-informacao">
+                    <label for="pedido-troca">Número do pedido</label>
+                    <input type="text" id="pedido-troca"
+                        placeholder="Ex.: CHI12345" required>
+                </div>
+
+                <div class="campo-informacao">
+                    <label for="motivo-troca">Motivo do contato</label>
+                    <select id="motivo-troca" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Produto com defeito">Produto com defeito</option>
+                        <option value="Produto incorreto">Recebi um produto incorreto</option>
+                        <option value="Desistência da compra">Desistência da compra</option>
+                        <option value="Outro">Outro motivo</option>
+                    </select>
+                </div>
+
+                <div class="campo-informacao campo-completo">
+                    <label for="mensagem-troca">Conte o que aconteceu</label>
+                    <textarea id="mensagem-troca" rows="5"
+                        placeholder="Descreva sua solicitação..." required></textarea>
+                </div>
+
+                <button type="submit" class="botao-informacoes">
+                    Enviar solicitação
+                </button>
+
+                <p id="mensagem-troca-status"></p>
+
+            </form>
+        </section>
+
+        <section class="secao-informacoes" id="acompanhar">
+
+            <div class="cabecalho-secao">
+                <h2>Acompanhe seu pedido</h2>
+                <p>
+                    Digite o código do pedido para consultar uma
+                    demonstração do andamento da entrega.
+                </p>
+            </div>
+
+            <form id="form-rastreamento" class="formulario-rastreamento">
+
+                <label for="codigo-pedido">Código do pedido</label>
+
+                <div class="campo-rastreamento">
+                    <input type="text" id="codigo-pedido"
+                        placeholder="Ex.: CHI12345" required>
+
+                    <button type="submit" aria-label="Consultar pedido">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+    
+        <section class="secao-informacoes" id="privacidade">
+
+            <div class="cabecalho-secao">
+                <h2>Privacidade</h2>
+                <p>
+                    Sua privacidade é importante para nós.
+                </p>
+            </div>
+
+            <div class="texto-informativo">
+
+                <h3>Quais informações coletamos?</h3>
+                <p>
+                    Durante uma compra ou solicitação de atendimento,
+                    informações como nome, e-mail e dados do pedido
+                    podem ser solicitadas para identificar o cliente
+                    e prestar suporte.
+                </p>
+
+                <h3>Como utilizamos seus dados?</h3>
+                <p>
+                    As informações são utilizadas para atendimento,
+                    comunicação sobre pedidos e melhoria da experiência
+                    de compra.
+                </p>
+
+                <h3>Compartilhamento de informações</h3>
+                <p>
+                    Os dados devem ser utilizados somente para as
+                    finalidades informadas, respeitando a privacidade
+                    dos clientes e a legislação aplicável.
+                </p>
+
+                <h3>Segurança</h3>
+                <p>
+                    A proteção das informações pessoais é uma prioridade.
+                    Recomendamos que os clientes não compartilhem suas
+                    senhas com terceiros.
+                </p>
+
+            </div>
+        </section>
+        
+        <section class="secao-informacoes" id="sobre">
+
+            <div class="cabecalho-secao">
+                <h2>Sobre a CHIAROSCURO</h2>
+            </div>
+
+            <div class="sobre-nos">
+                <div>
+                    <h3>Entre luzes e sombras, histórias permanecem.</h3>
+
+                    <p>
+                        A CHIAROSCURO nasceu da paixão por música,
+                        cinema e tudo aquilo que transforma experiências
+                        em lembranças.
+                    </p>
+
+                    <p>
+                        Nosso acervo reúne discos, CDs, DVDs e pôsteres
+                        para quem gosta de colecionar, revisitar histórias
+                        e descobrir novas formas de apreciar a arte.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <p>CHIAROSCURO © 2026 — Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        // FORMULÁRIO DE TROCA
+        const formularioTroca = document.getElementById("form-troca");
+
+        formularioTroca.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("mensagem-troca-status").textContent =
+                "Solicitação enviada com sucesso! (Simulação)";
+
+            formularioTroca.reset();
+        });
+    </script>
+
+</body>
+</html>
