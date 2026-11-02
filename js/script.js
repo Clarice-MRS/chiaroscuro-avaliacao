@@ -74,6 +74,26 @@ if (formulario && mensagem) {
     });
 }
 
+/****************************
+    GERAR ESTRELAS
+****************************/
+
+function gerarEstrelas(avaliacao) {
+
+    const estrelas = [];
+
+    for (let i = 1; i <= 5; i++) {
+
+        if (i <= avaliacao) {
+            estrelas.push('<i class="bi bi-star-fill"></i>');
+        } else {
+            estrelas.push('<i class="bi bi-star"></i>');
+        }
+
+    }
+
+    return estrelas.join("");
+}
 
 /****************************
     CRIAR PRODUTOS
@@ -113,7 +133,7 @@ function criarProdutos(lista, destino) {
                     </span>
 
                     <span class="avaliacao">
-                        ${produto.avaliacao}
+                        ${gerarEstrelas(produto.avaliacao)}
                     </span>
                 </div>
 

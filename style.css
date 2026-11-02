@@ -424,7 +424,11 @@ button:hover {
 
 .avaliacao {
     color: var(--star);
+    display: flex;
+    gap: 3px;
+    font-size: 0.9rem;
 }
+
 
 .adicionar-produto {
     display: flex;
